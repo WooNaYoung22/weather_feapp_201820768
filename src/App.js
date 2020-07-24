@@ -5,7 +5,7 @@ import './App.css';
 import RouterApp from './RouterApp';
 
 function App() {
-  const cityName = "Seoul";
+  //const cityName = "Seoul";
 
   console.log(BrowserRouter);
   return (

@@ -36,6 +36,6 @@ const Header = ({ cityName }) => {
         </a>
       </header>
     );
-};
+}
 
 export default Header;
