@@ -2,22 +2,16 @@ import React from "react";
 import { Switch, Route, withRouter } from "react-router";
 import { render } from "@testing-library/react";
 
-//const API_WEATHER = 'http://localhost:8888/weather-service/weathers?cityName=${cityName}';
-
-// Stateless component
-//const Weather = (props) => {
-//class
 class Weather extends React.Component {
 
   state = {
-    weather: "",
-    weather_description: "",
+    weather: "default",
+    weather_description: "default",
     temperature: 0,
   }
 
   componentDidMount() {
 
-    //const { cityName } = props.match.params;
     const { cityName } = this.props.match.params;
     console.log(cityName);
     const { weather } = this.state;
@@ -33,8 +27,7 @@ class Weather extends React.Component {
           temperature: (data.main.temp-273.15).toFixed(2),
         });
       })
-      .then().catch();
-      //.catch(e => console.log(e));
+      .catch(e => console.log(e));
   }
 
   render() {
@@ -43,11 +36,11 @@ class Weather extends React.Component {
 
     return (
       <div>
-        <p>Here is front page.!</p>
-        <h1>City name - {cityName}</h1>
-        <h1>Weather - {weather}</h1>
-        <h1>Weather details - {weather_description}</h1>
-        <h1>Temperature - {temperature}</h1>
+        <h1>[ Weather Information ]</h1>
+        <h2>City name - {cityName}</h2>
+        <h2>Weather - {weather}</h2>
+        <h2>Weather details - {weather_description}</h2>
+        <h2>Temperature - {temperature}</h2>
 
       </div>
     );
