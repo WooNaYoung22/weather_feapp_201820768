@@ -34,6 +34,15 @@ class Weather extends React.Component {
     const { cityName } = this.props.match.params;
     const { weather, weather_description, temperature } = this.state;
 
+    if(weather == "default") {
+      return (
+      <div>
+        <h1>[ Weather Information ]</h1>
+        <h2>There is no data in {cityName}..</h2>
+      </div>
+      );
+    }
+
     return (
       <div>
         <h1>[ Weather Information ]</h1>
